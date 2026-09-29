@@ -68,3 +68,19 @@ while (true)
     summ2++;
 }
 Console.WriteLine($"Количество неудачных попыток: {summ2}");
+
+
+string answer;
+
+do
+{
+    Console.Write("Введите дату посещения (например, 01.09): ");
+    string date = Console.ReadLine();
+    Console.WriteLine($"Запись добавлена: {date}");
+
+    Console.Write("Добавить еще одну запись? (да/нет): ");
+    answer = Console.ReadLine();
+} while (answer == "да");
+
+Console.WriteLine("Дневник сохранён");
+
