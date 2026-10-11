@@ -31,23 +31,21 @@ while (grade2 != -1)
 {
     sum += grade2;
     count++;
-    total = grade2;
-    grade2 = int.Parse(Console.ReadLine());
     if (total < grade2)
     {
         total = grade2;
     }
-
-} 
+    grade2 = int.Parse(Console.ReadLine());
+    } 
 if (count > 0)
 {
     Console.WriteLine($"Средний балл: {(double)sum / count}");
+    Console.WriteLine($"Наибольшая оценка {total}");
+
 } else
 {
     Console.WriteLine("Оценок не было введено");
 }
-
-Console.WriteLine(total);
 
 
 string correctPassword = "qwerty123";
@@ -86,6 +84,7 @@ Console.WriteLine("Дневник сохранён");
 
 
 Console.WriteLine("Вариант А");
+Console.Write("Введите число: ");
 int N = int.Parse(Console.ReadLine());
 int number = 1;
 while (number != 11)
@@ -96,7 +95,7 @@ while (number != 11)
 
 
 Console.WriteLine("Вариант В");
-Console.Write("Количество страниц за день: ");
+Console.Write("Количество страниц за день, для завершения введите -1: ");
 int page = int.Parse(Console.ReadLine());
 int count1 = 0;
 while (page != -1)
@@ -146,6 +145,38 @@ while (number2 != 0)
     number2 /= 10;
     count2++;
 }
-Console.WriteLine(count2);
+Console.WriteLine($"Количество цифр в числе: {count2}");
 
 
+Console.WriteLine("Дополнительное задание.Банкомат.");
+int PinCode = 123;
+int count3 = 0;
+int total2 = 0;
+while (count3 < 3)
+{
+    Console.Write("Введите PIN-код: ");
+    int PIN = int.Parse(Console.ReadLine());
+
+    if (PIN == PinCode)
+    {
+        Console.WriteLine("Введите сумму для снятия: ");
+        int sum1 = int.Parse(Console.ReadLine());
+        while (sum1 != 0)
+        {
+            total2 += sum1;
+            sum1 = int.Parse(Console.ReadLine());
+        }
+        Console.WriteLine($"Итоговая сумма снятия: {total2}");
+        break;
+    }
+    else
+    {
+        count3++;
+
+    }
+
+}
+if (count3 == 3)
+{
+    Console.WriteLine("Карта заблокирована");
+}
