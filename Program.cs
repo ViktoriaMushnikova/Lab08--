@@ -84,3 +84,68 @@ do
 
 Console.WriteLine("Дневник сохранён");
 
+
+Console.WriteLine("Вариант А");
+int N = int.Parse(Console.ReadLine());
+int number = 1;
+while (number != 11)
+{
+    Console.WriteLine($"{N} * {number} = {N * number}");
+    number++;
+}
+
+
+Console.WriteLine("Вариант В");
+Console.Write("Количество страниц за день: ");
+int page = int.Parse(Console.ReadLine());
+int count1 = 0;
+while (page != -1)
+{
+    count1 += page;
+    page = int.Parse(Console.ReadLine());
+}
+Console.WriteLine($"Количество страниц прочитанных за несколько дней {count1}");
+
+
+
+Console.Write("Введите свою фамилию: ");
+string surname = Console.ReadLine()!.Trim();
+if (string.IsNullOrEmpty(surname)) {
+Console.WriteLine("Фамилия не введена. Завершение работы.");
+return;
+}
+Random rnd = new(surname.GetHashCode() + DateTime.Now.DayOfYear);
+var assigned = Enumerable.Range(1, 10)
+.OrderBy(_ => rnd.Next())
+.Take(2)
+.OrderBy(x => x)
+.ToList();
+Console.WriteLine($"Задачи: №{assigned[0]} и №{assigned[1]}");
+
+
+Console.WriteLine($"Вариант 1");
+Console.Write("Введите число: ");
+int number1 = int.Parse(Console.ReadLine());
+while (number1 != 0)
+{
+    Console.WriteLine(number1);
+    number1--;
+    if (number1 == 0)
+    {
+        Console.WriteLine("Старт");
+    }
+}
+
+
+Console.WriteLine("Вариант 6");
+Console.Write("Введите число: ");
+int number2 = int.Parse(Console.ReadLine());
+int count2 = 0;
+while (number2 != 0)
+{
+    number2 /= 10;
+    count2++;
+}
+Console.WriteLine(count2);
+
+
